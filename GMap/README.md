@@ -1,6 +1,5 @@
 # Google Map
-## Load G-MAP api
-### import google api ไว้ใน head ของ html
+### import google maps api ไว้ใน head ของ html
 <pre>
 &lt;head>
     &lt;script src="http://maps.googleapis.com/maps/api/js">&lt;/script>
