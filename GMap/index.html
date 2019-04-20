@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>G-Map</title>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        function initialize(){
+            var mapProp = {
+                center : new google.maps.LatLng(13.819552,100.514812),
+                zoom : 10,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var content = document.getElementById('gMapContent');
+            var map = new google.maps.Map(content,mapProp);
+            var myMarker = new google.maps.Marker({
+                position : mapProp.center
+            });
+
+            myMarker.setMap(map);
+        }
+        google.maps.event.addDomListener(window,'load',initialize);
+    </script>
+</head>
+<body>
+    <div id="gMapContent" style="width:600px;height:400px">
+    </div>
+</body>
+</html>
