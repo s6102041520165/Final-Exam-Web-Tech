@@ -22,9 +22,9 @@ $num_field = mysqli_num_fields($result);
     <?php
     //นำชื่อ field ไปแสดง
         echo "<tr>";
-        for($i=0; $i<$num_field; $i++){
+        while($field = mysqli_fetch_field($result)){
             echo "<th>";
-                echo mysqli_field_name($result,$i);
+                echo $field->name;
             echo "</th>";
         }
         echo "</tr>";
