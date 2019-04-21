@@ -7,7 +7,7 @@
 &lt;?php
 $conn = mysql_connect('localhost','weerachai','1234') or die ("Connect db failed.");
 
-$db = mysql_select_db('tct_phone',$conn) or die("Can't select db.");
+$db = mysql_select_db('dreamhome',$conn) or die("Can't select db.");
 ?>
 </pre>
 ## การสร้าง Query
@@ -43,3 +43,41 @@ while($rs_name = mysql_fetch_row($result)){
 }
 ?>
 </pre>
+## การ Insert ข้อมูล
+* การ Insert ข้อมูล จะใช้ฟังก์ชั่น mysql_query($sql) เหมือนกับตัวอย่างการแสดงข้อมูล โดยต้องส่ง parameter เป็นคำสั่ง sql เช่น 
+<pre>
+insert into branch(name,postcode) 
+values ('KMUTNB','10800');
+</pre>
+### ตัวอย่างการใช้งานจริง
+<pre>
+&lt;php
+$name = 'KMUTNB';
+$postcode = '10800';
+$sql = "insert into branch(name,postcode)
+        values ($name,$postcode); ";
+$query = mysql_query($sql);
+if($query) echo "Inserted";
+?>
+</pre>
+
+## การ Update ข้อมูล
+* การ Update ข้อมูล จะใช้ฟังก์ชั่น mysql_query($sql) เหมือนกับตัวอย่างการแสดงข้อมูล โดยต้องส่ง parameter เป็นคำสั่ง sql เช่น 
+<pre>
+update branch SET name = 'KMUTT' WHERE id = 1;
+</pre>
+### ตัวอย่างการใช้งานจริง
+<pre>
+&lt;php
+$id = 1;
+$name = 'KMUTT';
+$postcode = '10800';
+$sql = "update branch
+        set name = $name,
+        postcode = $postcode
+        where id = $id";
+$query = mysql_query($sql);
+if($query) echo "Updated";
+?>
+</pre>
+#### * ตัวอย่างการ update จะอยู่ที่ไฟล์ update.php และการ insert อยู่ที่ไฟล์ insert.php
