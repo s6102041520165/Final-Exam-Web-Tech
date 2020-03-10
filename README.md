@@ -7,5 +7,3 @@
 * <a href="https://github.com/s6102041520165/Final-Exam-Web-Tech/tree/master/MySQL">MySQL Extensions</a>
 
 * <a href="https://github.com/s6102041520165/Final-Exam-Web-Tech/tree/master/MySQLi">MySQLi Extensions</a>
-
-* <a href="https://github.com/s6102041520165/Final-Exam-Web-Tech/tree/master/MySQL">PDO Extensions</a>
